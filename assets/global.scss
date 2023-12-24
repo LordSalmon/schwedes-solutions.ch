@@ -1,0 +1,26 @@
+@import 'fonts';
+
+:root {
+    --background-dark: #000000;
+    --background-light: #ffffff;
+    --primary-dark: #ffffff;
+    --primary-light: #000000;
+    --font-color-dark: #ffffff;
+    --font-color-inverse-dark: #000000;
+    --font-color-light: #000000;
+    --font-color-inverse-light: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+:root.dark, :root {
+    --background: var(--background-dark);
+    --primary: var(--primary-dark);
+    --font-color: var(--font-color-dark);
+    --font-color-inverse: var(--font-color-inverse-dark);
+}
+
+:root.light {
+    --background: var(--background-light);
+    --primary: var(--primary-light);
+}
