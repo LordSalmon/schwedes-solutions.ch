@@ -1,9 +1,4 @@
 <script lang="ts" setup>
-import useLocaleCookie from "./composables/useLocaleCookie";
-
-
-const localeCookie = useLocaleCookie();
-localeCookie.value ??= "en";
 
 </script>
 

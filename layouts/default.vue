@@ -11,10 +11,8 @@
 
 <style lang="scss">
 
-
-
-:root #__nuxt *, body {
-    background: var(--background);
+body {
+    background-color: var(--background);
     color: var(--font-color);
 }
 

@@ -5,11 +5,17 @@ export default defineNuxtConfig({
         "@nuxtjs/tailwindcss",
         "nuxt-icon",
         "nuxt-directus",
+        "@nuxtjs/i18n",
         ['@nuxtjs/robots', { /* module options */ }]
     ],
     runtimeConfig: {
-        directus: {
-            url: "https://api.schwedes-solutions.ch"
+        public: {
+            directus: {
+                url: "https://api.schwedes-solutions.ch"
+            }
         }
+    },
+    i18n: {
+        vueI18n: "./i18n.config.ts",
     }
 })
