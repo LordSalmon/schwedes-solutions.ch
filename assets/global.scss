@@ -7,15 +7,12 @@
     --primary-light: #000000;
     --font-color-dark: #ffffff;
     --font-color-inverse-dark: #000000;
+    --font-color-passive-dark: #eeeeee;
     --font-color-light: #000000;
+    --font-color-inverse-light: #222222;
     --font-color-inverse-light: #ffffff;
 
     font-family: 'Poppins', sans-serif;
-
-    --background: var(--background-dark);
-    --primary: var(--primary-dark);
-    --font-color: var(--font-color-dark);
-    --font-color-inverse: var(--font-color-inverse-dark);
 }
 
 :root.dark, :root {
@@ -23,6 +20,7 @@
     --background-inverse: var(--background-light);
     --primary: var(--primary-dark);
     --font-color: var(--font-color-dark);
+    --font-color-passive: var(--font-color-passive-dark);
     --font-color-inverse: var(--font-color-inverse-dark);
 }
 
@@ -30,6 +28,9 @@
     --background: var(--background-light);
     --background-inverse: var(--background-dark);
     --primary: var(--primary-light);
+    --font-color: var(--font-color-light);
+    --font-color-passive: var(--font-color-passive-light);
+    --font-color-inverse: var(--font-color-inverse-light);
 }
 
 html {

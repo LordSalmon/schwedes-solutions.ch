@@ -21,9 +21,10 @@ const contactData = await useContactData();
                 <div class="w-[0.5px] h-24 bg-fontColor" />
             </div>
             <div class="w-full absolute bottom-0 h-28 flex items-center justify-between px-16">
-                <div class="flex items-center gap-x-2 group">
-                    <Icon name="material-symbols:location-on-rounded" class="text-2xl group-hover:text-red-500  transition-all duration-200" />
+                <div class="flex items-center group">
+                    <Icon name="material-symbols:location-on-rounded" class="text-2xl group-hover:text-red-500  transition-all duration-200 mr-2" />
                     <span>{{ t('landing.location') }}</span>
+                    <span class="text-3xl">🇨🇭</span>
                 </div>
                 <div class="text-2xl flex items-center justify-end gap-x-4">
                     <NuxtLink 
@@ -42,7 +43,7 @@ const contactData = await useContactData();
                         :to="contactData.data.value?.data?.private_site ?? ''" class="cursor-pointer" title="Personal site"
                         target="_blank"
                     >
-                        <Icon name="material-symbols:web" />
+                        <Icon name="material-symbols:web" class="hover:text-fontColorPassive" />
                     </NuxtLink>
                 </div>
             </div>

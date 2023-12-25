@@ -13,7 +13,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-    <div class="w-full p-12" :class="{
+    <div class="w-full p-12 overflow-auto" :class="{
         'h-screen': $props.full
     }">
         <div class="h-28">

@@ -13,7 +13,8 @@ export default defineNuxtConfig({
             directus: {
                 url: "https://api.schwedes-solutions.ch"
             }
-        }
+        },
+        githubToken: "",
     },
     i18n: {
         vueI18n: "./i18n.config.ts",

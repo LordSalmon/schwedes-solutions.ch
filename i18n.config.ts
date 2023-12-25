@@ -15,9 +15,35 @@ export default defineI18nConfig(() => ({
                 message: "Nachricht",
                 success: "Nachricht erfolgreich gesendet",
                 error: "Nachricht konnte nicht gesendet werden",
+                options: {
+                    websiteCreation: "Webseiten Erstellung",
+                    websiteMaintenance: "Webseiten Wartung",
+                    websiteOptimization: "Webseiten Optimierung",
+                    websiteHosting: "Webseiten Hosting",
+                    consulting: "Beratung",
+                    applicationDevelopment: "Applikationsentwicklung",
+                    other: "Anderes",
+                    select: "Wähle eine Kategorie"
+                }
             },
             footer: {
                 text: "Copyright {year} schwedes-solutions.ch - Alle Rechte vorbehalten"
+            },
+            frameworks: {
+                title: "Frameworks",
+                titlePrefix: "Ich verwende folgendes für meine Projekte"
+            },
+            languages: {
+                title: "Sprachen",
+                titlePrefix: "Ich verwende folgendes für meine Projekte"
+            },
+            projects: {
+                title: "Projekte",
+                titlePrefix: "Hier sind meine aktuellen"
+            },
+            statistics: {
+                title: "Statistiken",
+                titlePrefix: "Erhalte einen Überblick über meine aktuellen"
             },
             landing: {
                 location: "Standort Schweiz",
@@ -44,6 +70,16 @@ export default defineI18nConfig(() => ({
                 message: "Message",
                 success: "Message sent successfully",
                 error: "Message could not be sent",
+                options: {
+                    websiteCreation: "Website creation",
+                    websiteMaintenance: "Website maintenance",
+                    websiteOptimization: "Website optimization",
+                    websiteHosting: "Website hosting",
+                    consulting: "Consulting",
+                    applicationDevelopment: "Application development",
+                    other: "Other",
+                    select: "Select a category"
+                }
             },
             footer: {
                 text: "Copyright {year} schwedes-solutions.ch - All rights reserved"
