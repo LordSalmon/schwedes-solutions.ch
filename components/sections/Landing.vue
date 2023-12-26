@@ -1,28 +1,42 @@
 <script lang="ts" setup>
+import { Application } from '@splinetool/runtime';
 
 const { t } = useI18n();
 const contactData = await useContactData();
+const splineBackground = ref<HTMLCanvasElement>();
+
+onMounted(() => {
+    if (splineBackground.value) {   
+        const app = new Application(splineBackground.value);
+        app.load('https://prod.spline.design/yJZXvbO6bq6JtmzL/scene.splinecode');
+    }
+})
 
 </script>
 
 <template>
     <GraphicalLandingSection id="">
         <div class="relative h-full w-full">
-            <div class="absolute top-0 left-0 w-full h-full px-16">
+            <div class="absolute top-0 left-0 w-full h-full px-16 z-20">
                 <div class="mt-40">
                     <h1 class="text-5xl">{{ t('landing.title') }}</h1>
                     <h2 class="text-2xl mt-4 w-[50vw]">{{ t('landing.subtitle') }}</h2>
                 </div>
             </div>
-            <div class="w-full absolute bottom-0 flex flex-col gap-y-6 justify-end items-center h-40">
+            <canvas 
+                class="absolute top-0 left-0 w-full h-full z-10"
+                id="spline-background"
+                ref="splineBackground"
+            />
+            <div class="w-full absolute bottom-0 flex flex-col gap-y-6 justify-end items-center h-40 z-30">
                 <NuxtLink to="#projects">
                     <span>Scroll down</span>
                 </NuxtLink>
                 <div class="w-[0.5px] h-24 bg-fontColor" />
             </div>
-            <div class="w-full absolute bottom-0 h-28 flex items-center justify-between px-16">
+            <div class="w-full absolute bottom-0 h-28 flex items-center justify-between px-16 z-30">
                 <NuxtLink 
-                    :to="contactData.data.value?.data.location_url"
+                    :to="contactData.data.value?.data.location_url ?? ''"
                     target="_blank"
                 >
                     <div class="flex items-center group">
