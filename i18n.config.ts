@@ -110,11 +110,13 @@ export default defineI18nConfig(() => ({
             },
             landing: {
                 location: "Located in Switzerland",
-                github: "GitHub",
-                linkedin: "LinkedIn",
-                personalSite: "Personal Site",
                 title: "Hi, I'm Simon!",
                 subtitle: "Full stack developer, open source enthusiast but first and foremost a human being.",
+                social: {
+                    github: "Github",
+                    linkedin: "LinkedIn",
+                    personalSite: "Personal Site"
+                }
             },
             thanks: {
                 backToHome: "Back to home",

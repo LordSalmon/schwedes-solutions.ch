@@ -8,8 +8,8 @@ const splineBackground = ref<HTMLCanvasElement>();
 onMounted(() => {
     if (splineBackground.value) {   
         const app = new Application(splineBackground.value);
-        app.load('https://prod.spline.design/yJZXvbO6bq6JtmzL/scene.splinecode');
-    }
+        app.load("/background.splinecode");
+    }   
 })
 
 </script>
