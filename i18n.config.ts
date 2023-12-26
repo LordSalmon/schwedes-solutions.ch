@@ -49,6 +49,8 @@ export default defineI18nConfig(() => ({
                 yearsOfExperience: "Jahre Erfahrung",
             },
             landing: {
+                pageTitle: "Startseite",
+                pageDescription: "Als erfahrener Senior Fullstack-Entwickler und zuverlässiger Freelancer biete ich maßgeschneiderte Lösungen für deine Entwicklungsprojekte. Mit fundiertem Fachwissen und umfassender Erfahrung in der Auftragsentwicklung bin ich dein vertrauenswürdiger Partner für die Realisierung digitaler Projekte. Entdecke erstklassige Programmierung, effiziente Umsetzung und professionelle Zusammenarbeit. Kontaktiere mich für eine individuelle Beratung und maximiere den Erfolg deiner Webentwicklungsvorhaben.",
                 location: "Standort Schweiz",
                 title: "Hey, ich bin Simon!",
                 subtitle: "Full stack Entwickler, Open Source Enthusiast und vor allem natürlich ein Mensch.",
@@ -59,6 +61,7 @@ export default defineI18nConfig(() => ({
                 }
             },
             thanks: {
+                pageTitle: "Danke",
                 backToHome: "Zurück zur Startseite",
                 title: "Danke für deine Nachricht!",
                 subtitle: "Ich werde mich so schnell wie möglich bei dir melden."
@@ -109,6 +112,8 @@ export default defineI18nConfig(() => ({
                 yearsOfExperience: "Years of experience",
             },
             landing: {
+                pageTitle: "Home",
+                pageDescription: "As an accomplished Senior Full-stack Developer and dependable freelancer, I specialize in delivering tailored solutions for your development projects. With extensive expertise and a proven track record in contract development, I serve as your trusted partner in bringing digital initiatives to life. Explore top-notch programming, efficient implementation, and professional collaboration. Get in touch for personalized consultation and elevate the success of your web development endeavors.",
                 location: "Located in Switzerland",
                 title: "Hi, I'm Simon!",
                 subtitle: "Full stack developer, open source enthusiast but first and foremost a human being.",
@@ -119,6 +124,7 @@ export default defineI18nConfig(() => ({
                 }
             },
             thanks: {
+                pageTitle: "Thanks",
                 backToHome: "Back to home",
                 title: "Thanks for your message!",
                 subtitle: "I will get back to you as soon as possible."

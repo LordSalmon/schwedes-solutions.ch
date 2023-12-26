@@ -1,8 +1,17 @@
 <script lang="ts" setup>
 
 useLocaleCookie().value ??= "en";
-const locale = useI18n();
-locale.setLocale("en");
+const { t, setLocale } = useI18n();
+setLocale("en");
+
+useSeoMeta({
+    title: t("landing.pageTitle"),
+    description: t("landing.pageDescription")
+});
+
+useHead({
+    titleTemplate: (title) => `${title} - Schwedes-solutions.ch`,
+})
 
 </script>
 
