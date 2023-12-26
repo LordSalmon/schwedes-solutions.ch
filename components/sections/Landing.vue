@@ -21,30 +21,35 @@ const contactData = await useContactData();
                 <div class="w-[0.5px] h-24 bg-fontColor" />
             </div>
             <div class="w-full absolute bottom-0 h-28 flex items-center justify-between px-16">
-                <div class="flex items-center group">
-                    <Icon name="material-symbols:location-on-rounded" class="text-2xl group-hover:text-red-500  transition-all duration-200 mr-2" />
-                    <span>{{ t('landing.location') }}</span>
-                    <span class="text-3xl">🇨🇭</span>
-                </div>
+                <NuxtLink 
+                    :to="contactData.data.value?.data.location_url"
+                    target="_blank"
+                >
+                    <div class="flex items-center group">
+                        <Icon 
+                            name="material-symbols:location-on-rounded" 
+                            class="text-2xl group-hover:text-red-500 transition-all duration-200 mr-2" 
+                        />
+                        <span>{{ t('landing.location') }}</span>
+                        <span class="text-3xl">🇨🇭</span>
+                    </div>
+                </NuxtLink>
                 <div class="text-2xl flex items-center justify-end gap-x-4">
-                    <NuxtLink 
-                        :to="contactData.data.value?.data?.github ?? ''" class="cursor-pointer" title="Github"
-                        target="_blank"
-                    >
-                        <Icon name="mdi:github" />
-                    </NuxtLink>
-                    <NuxtLink 
-                        :to="contactData.data.value?.data?.linkedin ?? ''" class="cursor-pointer" title="LinkedIn"
-                        target="_blank"
-                    >
-                        <Icon name="mdi:linkedin" />
-                    </NuxtLink>
-                    <NuxtLink 
-                        :to="contactData.data.value?.data?.private_site ?? ''" class="cursor-pointer" title="Personal site"
-                        target="_blank"
-                    >
-                        <Icon name="material-symbols:web" class="hover:text-fontColorPassive" />
-                    </NuxtLink>
+                    <LandingSocialButton 
+                        :title="t('landing.social.github')" 
+                        :url="contactData.data.value?.data?.github ?? ''" 
+                        icon="mdi:github"
+                    />
+                    <LandingSocialButton 
+                        :title="t('landing.social.linkedin')" 
+                        :url="contactData.data.value?.data?.linkedin ?? ''" 
+                        icon="mdi:linkedin"
+                    />
+                    <LandingSocialButton 
+                        :title="t('landing.social.personalSite')" 
+                        :url="contactData.data.value?.data?.private_site ?? ''" 
+                        icon="material-symbols:web"
+                    />
                 </div>
             </div>
         </div>

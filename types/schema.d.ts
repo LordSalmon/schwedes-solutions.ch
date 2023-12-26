@@ -243,6 +243,20 @@ export interface paths {
          */
         get: operations["readSingleItemsImprint"];
     };
+    "/items/contact": {
+        /**
+         * List Items
+         * @description List the contact items.
+         */
+        get: operations["readItemsContact"];
+    };
+    "/items/contact/{id}": {
+        /**
+         * Retrieve an Item
+         * @description Retrieve a single contact item by unique identifier.
+         */
+        get: operations["readSingleItemsContact"];
+    };
     "/items/references_files": {
         /**
          * List Items
@@ -271,20 +285,6 @@ export interface paths {
          */
         get: operations["readSingleItemsReferences"];
     };
-    "/items/contact": {
-        /**
-         * List Items
-         * @description List the contact items.
-         */
-        get: operations["readItemsContact"];
-    };
-    "/items/contact/{id}": {
-        /**
-         * Retrieve an Item
-         * @description Retrieve a single contact item by unique identifier.
-         */
-        get: operations["readSingleItemsContact"];
-    };
     "/items/reports": {
         /**
          * List Items
@@ -312,6 +312,20 @@ export interface paths {
          * @description Retrieve a single reports_translations item by unique identifier.
          */
         get: operations["readSingleItemsReportsTranslations"];
+    };
+    "/items/statistics": {
+        /**
+         * List Items
+         * @description List the statistics items.
+         */
+        get: operations["readItemsStatistics"];
+    };
+    "/items/statistics/{id}": {
+        /**
+         * Retrieve an Item
+         * @description Retrieve a single statistics item by unique identifier.
+         */
+        get: operations["readSingleItemsStatistics"];
     };
     "/items/texts_translations": {
         /**
@@ -642,6 +656,29 @@ export interface components {
             date_updated?: string | null;
             translations?: ((number | components["schemas"]["ItemsImprintTranslations"])[]) | null;
         };
+        ItemsContact: {
+            /** Format: uuid */
+            id?: string;
+            status?: string;
+            /** Format: uuid */
+            user_created?: string | null;
+            /** Format: timestamp */
+            date_created?: string | null;
+            /** Format: uuid */
+            user_updated?: string | null;
+            /** Format: timestamp */
+            date_updated?: string | null;
+            email?: string | null;
+            phone?: string | null;
+            name?: string | null;
+            address?: string | null;
+            city?: string | null;
+            country?: string | null;
+            github?: string | null;
+            linkedin?: string | null;
+            private_site?: string | null;
+            location_url?: string | null;
+        };
         ItemsReferencesFiles: {
             id?: number;
             references_id?: string | components["schemas"]["ItemsReferences"] | null;
@@ -669,28 +706,6 @@ export interface components {
             translations?: ((number | components["schemas"]["ItemsReferencesTranslations"])[]) | null;
             assets?: ((number | components["schemas"]["ItemsReferencesFiles"])[]) | null;
         };
-        ItemsContact: {
-            /** Format: uuid */
-            id?: string;
-            status?: string;
-            /** Format: uuid */
-            user_created?: string | null;
-            /** Format: timestamp */
-            date_created?: string | null;
-            /** Format: uuid */
-            user_updated?: string | null;
-            /** Format: timestamp */
-            date_updated?: string | null;
-            email?: string | null;
-            phone?: string | null;
-            name?: string | null;
-            address?: string | null;
-            city?: string | null;
-            country?: string | null;
-            github?: string | null;
-            linkedin?: string | null;
-            private_site?: string | null;
-        };
         ItemsReports: {
             /** Format: uuid */
             id?: string;
@@ -712,6 +727,22 @@ export interface components {
             reports_id?: string | components["schemas"]["ItemsReports"] | null;
             languages_code?: string | null;
             content?: string | null;
+        };
+        ItemsStatistics: {
+            /** Format: uuid */
+            id?: string;
+            status?: string;
+            /** Format: uuid */
+            user_created?: string | null;
+            /** Format: timestamp */
+            date_created?: string | null;
+            /** Format: uuid */
+            user_updated?: string | null;
+            /** Format: timestamp */
+            date_updated?: string | null;
+            customers?: number | null;
+            years_experience?: number | null;
+            realized_projects?: number | null;
         };
         ItemsTextsTranslations: {
             id?: number;
@@ -1797,6 +1828,64 @@ export interface operations {
     };
     /**
      * List Items
+     * @description List the contact items.
+     */
+    readItemsContact: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                limit?: components["parameters"]["Limit"];
+                meta?: components["parameters"]["Meta"];
+                offset?: components["parameters"]["Offset"];
+                sort?: components["parameters"]["Sort"];
+                filter?: components["parameters"]["Filter"];
+                search?: components["parameters"]["Search"];
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsContact"][];
+                        meta?: components["schemas"]["x-metadata"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+        };
+    };
+    /**
+     * Retrieve an Item
+     * @description Retrieve a single contact item by unique identifier.
+     */
+    readSingleItemsContact: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                meta?: components["parameters"]["Meta"];
+                version?: components["parameters"]["Version"];
+            };
+            path: {
+                /** @description Index of the item. */
+                id: number | string;
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsContact"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+            404: components["responses"]["NotFoundError"];
+        };
+    };
+    /**
+     * List Items
      * @description List the references_files items.
      */
     readItemsReferencesFiles: {
@@ -1913,64 +2002,6 @@ export interface operations {
     };
     /**
      * List Items
-     * @description List the contact items.
-     */
-    readItemsContact: {
-        parameters: {
-            query?: {
-                fields?: components["parameters"]["Fields"];
-                limit?: components["parameters"]["Limit"];
-                meta?: components["parameters"]["Meta"];
-                offset?: components["parameters"]["Offset"];
-                sort?: components["parameters"]["Sort"];
-                filter?: components["parameters"]["Filter"];
-                search?: components["parameters"]["Search"];
-            };
-        };
-        responses: {
-            /** @description Successful request */
-            200: {
-                content: {
-                    "application/json": {
-                        data?: components["schemas"]["ItemsContact"][];
-                        meta?: components["schemas"]["x-metadata"];
-                    };
-                };
-            };
-            401: components["responses"]["UnauthorizedError"];
-        };
-    };
-    /**
-     * Retrieve an Item
-     * @description Retrieve a single contact item by unique identifier.
-     */
-    readSingleItemsContact: {
-        parameters: {
-            query?: {
-                fields?: components["parameters"]["Fields"];
-                meta?: components["parameters"]["Meta"];
-                version?: components["parameters"]["Version"];
-            };
-            path: {
-                /** @description Index of the item. */
-                id: number | string;
-            };
-        };
-        responses: {
-            /** @description Successful request */
-            200: {
-                content: {
-                    "application/json": {
-                        data?: components["schemas"]["ItemsContact"];
-                    };
-                };
-            };
-            401: components["responses"]["UnauthorizedError"];
-            404: components["responses"]["NotFoundError"];
-        };
-    };
-    /**
-     * List Items
      * @description List the reports items.
      */
     readItemsReports: {
@@ -2078,6 +2109,64 @@ export interface operations {
                 content: {
                     "application/json": {
                         data?: components["schemas"]["ItemsReportsTranslations"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+            404: components["responses"]["NotFoundError"];
+        };
+    };
+    /**
+     * List Items
+     * @description List the statistics items.
+     */
+    readItemsStatistics: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                limit?: components["parameters"]["Limit"];
+                meta?: components["parameters"]["Meta"];
+                offset?: components["parameters"]["Offset"];
+                sort?: components["parameters"]["Sort"];
+                filter?: components["parameters"]["Filter"];
+                search?: components["parameters"]["Search"];
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsStatistics"][];
+                        meta?: components["schemas"]["x-metadata"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+        };
+    };
+    /**
+     * Retrieve an Item
+     * @description Retrieve a single statistics item by unique identifier.
+     */
+    readSingleItemsStatistics: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                meta?: components["parameters"]["Meta"];
+                version?: components["parameters"]["Version"];
+            };
+            path: {
+                /** @description Index of the item. */
+                id: number | string;
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsStatistics"];
                     };
                 };
             };

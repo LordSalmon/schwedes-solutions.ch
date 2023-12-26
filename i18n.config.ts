@@ -43,15 +43,20 @@ export default defineI18nConfig(() => ({
             },
             statistics: {
                 title: "Statistiken",
-                titlePrefix: "Erhalte einen Überblick über meine aktuellen"
+                titlePrefix: "Erhalte einen Überblick über meine aktuellen",
+                customers: "Kunden zufrieden gestellt",
+                projects: "Projekte realisiert",
+                yearsOfExperience: "Jahre Erfahrung",
             },
             landing: {
                 location: "Standort Schweiz",
-                github: "GitHub",
-                linkedin: "LinkedIn",
-                personalSite: "Persönliche Webseite",
                 title: "Hey, ich bin Simon!",
                 subtitle: "Full stack Entwickler, Open Source Enthusiast und vor allem natürlich ein Mensch.",
+                social: {
+                    github: "Github",
+                    linkedin: "LinkedIn",
+                    personalSite: "Persönliche Webseite"
+                }
             },
             thanks: {
                 backToHome: "Zurück zur Startseite",
@@ -98,7 +103,10 @@ export default defineI18nConfig(() => ({
             },
             statistics: {
                 title: "Statistics",
-                titlePrefix: "Get an overview over my recent"
+                titlePrefix: "Get an overview over my recent",
+                customers: "Customers satisfied",
+                projects: "Projects realized",
+                yearsOfExperience: "Years of experience",
             },
             landing: {
                 location: "Located in Switzerland",
@@ -106,7 +114,7 @@ export default defineI18nConfig(() => ({
                 linkedin: "LinkedIn",
                 personalSite: "Personal Site",
                 title: "Hi, I'm Simon!",
-                subtitle: "Full stack developer, open source enthusiast but first and foremost importantly a human being.",
+                subtitle: "Full stack developer, open source enthusiast but first and foremost a human being.",
             },
             thanks: {
                 backToHome: "Back to home",

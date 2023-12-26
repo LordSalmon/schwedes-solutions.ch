@@ -23,7 +23,6 @@ module.exports = {
                 fontColorInverse: useVar("font-color-inverse"),
                 fontColorInverseDark: useVar("font-color-inverse-dark"),
                 fontColorInverseLight: useVar("font-color-inverse-light"),
-                reddo: "#ff0000",
             }
         },
     },
