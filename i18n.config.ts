@@ -115,7 +115,7 @@ export default defineI18nConfig(() => ({
                 pageTitle: "Home",
                 pageDescription: "As an accomplished Senior Full-stack Developer and dependable freelancer, I specialize in delivering tailored solutions for your development projects. With extensive expertise and a proven track record in contract development, I serve as your trusted partner in bringing digital initiatives to life. Explore top-notch programming, efficient implementation, and professional collaboration. Get in touch for personalized consultation and elevate the success of your web development endeavors.",
                 location: "Located in Switzerland",
-                title: "Hi, I'm Simon!",
+                title: "Hey! I am Simon.",
                 subtitle: "Full stack developer, open source enthusiast but first and foremost a human being.",
                 social: {
                     github: "Github",
