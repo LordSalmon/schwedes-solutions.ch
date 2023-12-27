@@ -6,6 +6,7 @@ export default defineNuxtConfig({
         "nuxt-icon",
         "nuxt-directus",
         "@nuxtjs/i18n",
+        "@vueuse/nuxt",
         ['@nuxtjs/robots', { /* module options */ }]
     ],
     runtimeConfig: {

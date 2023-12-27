@@ -1,15 +1,37 @@
 <script lang="ts" setup>
 import { Application } from '@splinetool/runtime';
+import { useIntersectionObserver } from "@vueuse/core";
 
 const { t } = useI18n();
 const contactData = await useContactData();
 const splineBackground = ref<HTMLCanvasElement>();
+const app = ref<Application>();
+const intersectionObserver = useIntersectionObserver(splineBackground, (events: IntersectionObserverEntry[]) => {
+    const event = events[0];
+    if (event.isIntersecting) {
+        if (splineBackground.value) {
+            app.value?.play();
+        }
+    } else {
+        if (splineBackground.value) {
+            app.value?.stop();
+        }
+    }
+});
+
 
 onMounted(() => {
     if (splineBackground.value) {   
-        const app = new Application(splineBackground.value);
-        app.load("/background.splinecode");
+        app.value = new Application(splineBackground.value);
+        app.value.load("/background.splinecode");
     }   
+});
+
+onBeforeUnmount(() => {
+    if (app.value) {
+        app.value.stop();
+    }
+    intersectionObserver.stop();
 })
 
 </script>

@@ -327,6 +327,20 @@ export interface paths {
          */
         get: operations["readSingleItemsStatistics"];
     };
+    "/items/programming_tools": {
+        /**
+         * List Items
+         * @description List the programming_tools items.
+         */
+        get: operations["readItemsProgrammingTools"];
+    };
+    "/items/programming_tools/{id}": {
+        /**
+         * Retrieve an Item
+         * @description Retrieve a single programming_tools item by unique identifier.
+         */
+        get: operations["readSingleItemsProgrammingTools"];
+    };
     "/items/texts_translations": {
         /**
          * List Items
@@ -354,20 +368,6 @@ export interface paths {
          * @description Retrieve a single texts item by unique identifier.
          */
         get: operations["readSingleItemsTexts"];
-    };
-    "/items/programming_tools": {
-        /**
-         * List Items
-         * @description List the programming_tools items.
-         */
-        get: operations["readItemsProgrammingTools"];
-    };
-    "/items/programming_tools/{id}": {
-        /**
-         * Retrieve an Item
-         * @description Retrieve a single programming_tools item by unique identifier.
-         */
-        get: operations["readSingleItemsProgrammingTools"];
     };
     "/items/alerts_translations": {
         /**
@@ -744,6 +744,26 @@ export interface components {
             years_experience?: number | null;
             realized_projects?: number | null;
         };
+        ItemsProgrammingTools: {
+            /** Format: uuid */
+            id?: string;
+            status?: string | null;
+            sort?: number | null;
+            /** Format: uuid */
+            user_created?: string | null;
+            /** Format: timestamp */
+            date_created?: string | null;
+            /** Format: uuid */
+            user_updated?: string | null;
+            /** Format: timestamp */
+            date_updated?: string | null;
+            title?: string | null;
+            color?: string | null;
+            icon?: string | components["schemas"]["Files"] | null;
+            type?: string | null;
+            url?: string | null;
+            contrast_color?: string | null;
+        };
         ItemsTextsTranslations: {
             id?: number;
             texts_id?: string | components["schemas"]["ItemsTexts"] | null;
@@ -765,23 +785,6 @@ export interface components {
             date_updated?: string | null;
             key?: string | null;
             translations?: ((number | components["schemas"]["ItemsTextsTranslations"])[]) | null;
-        };
-        ItemsProgrammingTools: {
-            /** Format: uuid */
-            id?: string;
-            status?: string | null;
-            sort?: number | null;
-            /** Format: uuid */
-            user_created?: string | null;
-            /** Format: timestamp */
-            date_created?: string | null;
-            /** Format: uuid */
-            user_updated?: string | null;
-            /** Format: timestamp */
-            date_updated?: string | null;
-            title?: string | null;
-            color?: string | null;
-            icon?: string | components["schemas"]["Files"] | null;
         };
         ItemsAlertsTranslations: {
             id?: number;
@@ -2176,6 +2179,64 @@ export interface operations {
     };
     /**
      * List Items
+     * @description List the programming_tools items.
+     */
+    readItemsProgrammingTools: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                limit?: components["parameters"]["Limit"];
+                meta?: components["parameters"]["Meta"];
+                offset?: components["parameters"]["Offset"];
+                sort?: components["parameters"]["Sort"];
+                filter?: components["parameters"]["Filter"];
+                search?: components["parameters"]["Search"];
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsProgrammingTools"][];
+                        meta?: components["schemas"]["x-metadata"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+        };
+    };
+    /**
+     * Retrieve an Item
+     * @description Retrieve a single programming_tools item by unique identifier.
+     */
+    readSingleItemsProgrammingTools: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                meta?: components["parameters"]["Meta"];
+                version?: components["parameters"]["Version"];
+            };
+            path: {
+                /** @description Index of the item. */
+                id: number | string;
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsProgrammingTools"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+            404: components["responses"]["NotFoundError"];
+        };
+    };
+    /**
+     * List Items
      * @description List the texts_translations items.
      */
     readItemsTextsTranslations: {
@@ -2283,64 +2344,6 @@ export interface operations {
                 content: {
                     "application/json": {
                         data?: components["schemas"]["ItemsTexts"];
-                    };
-                };
-            };
-            401: components["responses"]["UnauthorizedError"];
-            404: components["responses"]["NotFoundError"];
-        };
-    };
-    /**
-     * List Items
-     * @description List the programming_tools items.
-     */
-    readItemsProgrammingTools: {
-        parameters: {
-            query?: {
-                fields?: components["parameters"]["Fields"];
-                limit?: components["parameters"]["Limit"];
-                meta?: components["parameters"]["Meta"];
-                offset?: components["parameters"]["Offset"];
-                sort?: components["parameters"]["Sort"];
-                filter?: components["parameters"]["Filter"];
-                search?: components["parameters"]["Search"];
-            };
-        };
-        responses: {
-            /** @description Successful request */
-            200: {
-                content: {
-                    "application/json": {
-                        data?: components["schemas"]["ItemsProgrammingTools"][];
-                        meta?: components["schemas"]["x-metadata"];
-                    };
-                };
-            };
-            401: components["responses"]["UnauthorizedError"];
-        };
-    };
-    /**
-     * Retrieve an Item
-     * @description Retrieve a single programming_tools item by unique identifier.
-     */
-    readSingleItemsProgrammingTools: {
-        parameters: {
-            query?: {
-                fields?: components["parameters"]["Fields"];
-                meta?: components["parameters"]["Meta"];
-                version?: components["parameters"]["Version"];
-            };
-            path: {
-                /** @description Index of the item. */
-                id: number | string;
-            };
-        };
-        responses: {
-            /** @description Successful request */
-            200: {
-                content: {
-                    "application/json": {
-                        data?: components["schemas"]["ItemsProgrammingTools"];
                     };
                 };
             };
