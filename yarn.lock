@@ -575,6 +575,11 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.0.tgz#0709e9f4cb252351c609c6e6d8d6779a8d25edff"
   integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
 
+"@headlessui/vue@^1.0.0":
+  version "1.7.16"
+  resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.7.16.tgz#bdc9d32d329248910325539b99e6abfce0c69f89"
+  integrity sha512-nKT+nf/q6x198SsyK54mSszaQl/z+QxtASmgMEJtpxSX2Q0OPJX0upS/9daDyiECpeAsvjkoOrm2O/6PyBQ+Qg==
+
 "@iconify/collections@^1.0.366":
   version "1.0.373"
   resolved "https://registry.yarnpkg.com/@iconify/collections/-/collections-1.0.373.tgz#53290420615cc65e4e5df5cbdccbf683402d70c0"
@@ -1510,10 +1515,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/merge-streams/-/merge-streams-1.0.0.tgz#9cd84cc15bc865a5ca35fcaae198eb899f7b5c90"
   integrity sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==
 
-"@splinetool/runtime@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-1.0.16.tgz#b2cc140fdb93963ebbb5ff5f528d48adb6ef61fc"
-  integrity sha512-9Fp7rfeyMeRfj6Ldj++1MgbPeVLtwq7cJobDiNFv9XlVeqwzM/M7AWA8jzACwnRB/Cm/I1gJGx/wdK9TqrKYAA==
+"@splinetool/runtime@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-1.0.17.tgz#461acf619edeb47ff5e91cf5f13372cc402fe5af"
+  integrity sha512-NYpZ2l11dWPDSQS0707yjNZkT8T/qNnMdzvBF6xn/rdw52c3eNB3PBCigd58PB6dUkAnHqJoR0uilUHIupKSeQ==
   dependencies:
     on-change "^4.0.0"
     semver-compare "^1.0.0"
@@ -4488,6 +4493,15 @@ nuxt-directus@^5.6.0:
   integrity sha512-PHiekefNWpF8qHoWZOMClSckLKcSKo3oRPWgPXdQjkaF0xPkNkH+5ehvFYU3FhNQbVvqalQrAla78J5svFcgPw==
   dependencies:
     "@nuxt/kit" "^3.0.0"
+
+nuxt-headlessui@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/nuxt-headlessui/-/nuxt-headlessui-1.1.5.tgz#433d17772f9090b399c54ae8d3e1e149500ab0e6"
+  integrity sha512-BtXnqlyqW0JX2wPDLvu+sG/Zvm3kLMJ2Vifz+1or7IqrCnpQMGcBYCKTLw6KrI1icuaoMdW0fBDcSLIJlKW71Q==
+  dependencies:
+    "@headlessui/vue" "^1.0.0"
+    "@nuxt/kit" "^3.8.2"
+    pathe "^1.1.1"
 
 nuxt-icon@^0.6.7:
   version "0.6.7"

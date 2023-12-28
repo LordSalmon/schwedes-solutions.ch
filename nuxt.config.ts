@@ -7,6 +7,9 @@ export default defineNuxtConfig({
         "nuxt-directus",
         "@nuxtjs/i18n",
         "@vueuse/nuxt",
+        ["nuxt-headlessui", {
+            prefix: ""
+        }],
         ['@nuxtjs/robots', { /* module options */ }]
     ],
     runtimeConfig: {

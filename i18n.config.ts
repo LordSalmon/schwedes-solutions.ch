@@ -27,7 +27,19 @@ export default defineI18nConfig(() => ({
                 }
             },
             footer: {
-                text: "Copyright {year} schwedes-solutions.ch - Alle Rechte vorbehalten"
+                text: "Copyright {year} schwedes-solutions.ch - Alle Rechte vorbehalten",
+                sections: {
+                    data: {
+                        title: "Daten",
+                        buttons: {
+                            imprint: "Impressum",
+                            privacy: "Datenschutz"
+                        }
+                    },
+                    projects: {
+                        title: "Projekte",
+                    },
+                }
             },
             frameworks: {
                 title: "Frameworks",
@@ -90,7 +102,19 @@ export default defineI18nConfig(() => ({
                 }
             },
             footer: {
-                text: "Copyright {year} schwedes-solutions.ch - All rights reserved"
+                text: "Copyright {year} schwedes-solutions.ch - All rights reserved",
+                sections: {
+                    data: {
+                        title: "Data",
+                        buttons: {
+                            imprint: "Imprint",
+                            privacy: "Privacy"
+                        }
+                    },
+                    projects: {
+                        title: "Projects",
+                    },
+                }
             },
             frameworks: {
                 title: "Frameworks",
@@ -128,7 +152,7 @@ export default defineI18nConfig(() => ({
                 backToHome: "Back to home",
                 title: "Thanks for your message!",
                 subtitle: "I will get back to you as soon as possible."
-            }
+            },
         }
     }
 }))

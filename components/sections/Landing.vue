@@ -23,7 +23,7 @@ const intersectionObserver = useIntersectionObserver(splineBackground, (events: 
 onMounted(() => {
     if (splineBackground.value) {   
         app.value = new Application(splineBackground.value);
-        app.value.load("/background.splinecode");
+        app.value.load("/waveform.splinecode");
     }   
 });
 

@@ -48,12 +48,5 @@ function shiftArray<T = any>(array: T[], shift: number): T[] {
                 </div>
             </div>
         </div>
-        <!-- <div class="flex justify-start items-start flex-wrap gap-4">
-            <FrameworksTool
-                v-for="framework in frameworkData.data"
-                :key="framework.id"
-                :framework="framework"
-            />
-        </div> -->
     </GraphicalFullSection>
 </template>
