@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
                     <div class="flex items-center group">
                         <Icon 
                             name="material-symbols:location-on-rounded" 
-                            class="text-2xl group-hover:text-red-500 transition-all duration-200 mr-2" 
+                            class="text-2xl group-hover:text-[#C1281B] transition-all duration-200 mr-2" 
                         />
                         <span class="hidden md:block">{{ t('landing.location') }}</span>
                         <span class="block md:hidden">{{ t('landing.mobileLocation') }}</span>
