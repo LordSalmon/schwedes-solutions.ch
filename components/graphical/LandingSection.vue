@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div class="w-full h-[calc(100vh_-_7rem)]">
+    <div class="w-full h-svh md:h-[calc(100vh_-_7rem)]">
         <slot></slot>
     </div>
 </template>
