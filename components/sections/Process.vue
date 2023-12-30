@@ -12,7 +12,7 @@ const processData = await useProcessData();
         :titlePrefix="t('process.titlePrefix')" 
         :title="t('process.title')"
     >
-        <div class="bg-neutral-500 rounded-xl p-6 m-6">
+        <div class="md:bg-neutral-500 rounded-xl md:p-6 md:m-6 w-full flex flex-col gap-y-8 md:gap-y-0">
             <div
                 v-for="(element, index) in processData.data"
                 :key="element.id"

@@ -9,22 +9,21 @@ const app = ref<Application>();
 const intersectionObserver = useIntersectionObserver(splineBackground, (events: IntersectionObserverEntry[]) => {
     const event = events[0];
     if (event.isIntersecting) {
-        if (splineBackground.value) {
-            app.value?.play();
+        if (splineBackground.value && app.value) {
+            app.value.play();
         }
     } else {
-        if (splineBackground.value) {
-            app.value?.stop();
+        if (splineBackground.value && app.value) {
+            app.value.stop();
         }
     }
 });
 
-
-onMounted(() => {
+watch(splineBackground, () => {
     if (splineBackground.value) {   
         app.value = new Application(splineBackground.value);
         app.value.load("/waveform.splinecode");
-    }   
+    }
 });
 
 onBeforeUnmount(() => {

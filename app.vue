@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 
 useLocaleCookie().value ??= "en";
-const { t, setLocale } = useI18n();
-setLocale("en");
+const { t, setLocale, locale } = useI18n();
+setLocale(useLocaleCookie().value!);
+watch(locale, (newLocale) => {
+    useLocaleCookie().value = newLocale;
+});
+
 
 useSeoMeta({
     title: t("landing.pageTitle"),

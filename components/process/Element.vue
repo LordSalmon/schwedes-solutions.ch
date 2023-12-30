@@ -30,7 +30,7 @@ const imageAlt = computed(() => {
 
 <template>
     <div class="flex">
-        <div class="relative min-w-[15rem] max-w-[25vw] flex justify-center items-center h-full">
+        <div class="transition-all duration-100 hidden md:flex relative md:min-w-[5rem] md:max-w-[5rem] lg:min-w-[15rem] lg:max-w-[25vw] flex-col md:flex-row justify-center items-center h-full">
             <div 
                 v-if="!props.first" 
                 class="absolute top-0 left-1/2 h-[calc(50%_-_0.875rem)] w-[0.5px] bg-primary"
@@ -43,18 +43,18 @@ const imageAlt = computed(() => {
                 class="absolute bottom-0 left-1/2 h-[calc(50%_-_0.875rem)] w-[0.5px] bg-primary" 
             />
         </div>
-        <div class="rounded-lg bg-background p-4 flex items-center justify-between gap-x-6 m-4">
+        <div class="rounded-lg bg-background p-4 flex flex-col md:flex-row items-center justify-between gap-x-6 md:m-4">
             <img 
                 :alt="imageAlt" 
                 :src="useAssetUrl(props.process.image?.id ?? '')"
                 class="h-52 aspect-square"
             >
-            <div class="h-full p-4">
-                <div class="h-full w-[0.5px] bg-neutral-400" />
+            <div class="md:h-full w-full md:w-auto p-4">
+                <div class="w-full h-[0.5px] md:h-full md:w-[0.5px] bg-neutral-400" />
             </div>
             <div class="flex flex-col items-start justify-start gap-y-6">
                 <h3 class="text-xl">{{ props.process.translations?.[0].title }}</h3>
-                <p>{{ props.process.translations?.[0].content }}</p>
+                <p class="text-sm font-light">{{ props.process.translations?.[0].content }}</p>
             </div>
         </div>
     </div>

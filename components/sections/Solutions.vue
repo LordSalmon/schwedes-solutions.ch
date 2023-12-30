@@ -63,7 +63,7 @@ function duplicate<T = any>(array: T[]): T[] {
 <style lang="scss">
 
 :root {
-    --animation-time: 80s;
+    --animation-time: 120s;
 }
 
 @keyframes infiniteScrollLeft {

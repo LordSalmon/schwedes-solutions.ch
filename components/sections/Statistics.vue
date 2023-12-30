@@ -27,7 +27,7 @@ const statisticsCards: {number: number, title: string}[] = [
         :titlePrefix="t('statistics.titlePrefix')" 
         :title="t('statistics.title')"
     >
-        <div class="flex justify-around items-center gap-x-6 h-[calc(100%_-_7rem)]">
+        <div class="flex flex-col md:flex-row justify-around items-center gap-6 h-[calc(100%_-_7rem)]">
             <StatisticsCard 
                 v-for="card in statisticsCards"
                 :key="card.title"
