@@ -2,11 +2,6 @@
 
 const { t } = useI18n();
 
-const firstName = ref("");
-const lastName = ref("");
-const email = ref("");
-const message = ref("");
-
 type SelectOption = {
     label: string;
     value: string;
@@ -48,6 +43,7 @@ const redirectUrl = computed(() => {
 <template>
     <GraphicalFullSection 
         id="contact" 
+        dataId="contact"
         :titlePrefix="t('contact.titlePrefix')" 
         :title="t('contact.title')"
         :full="false"
