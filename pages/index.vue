@@ -16,7 +16,7 @@ useSeoMeta({
     <div>
         <SectionsLanding />
         <SectionsProjects />
-        <SectionsFrameworks />
+        <SectionsSolutions />
         <SectionsStatistics />
         <SectionsContact />
     </div>

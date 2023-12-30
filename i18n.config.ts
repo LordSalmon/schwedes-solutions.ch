@@ -41,8 +41,8 @@ export default defineI18nConfig(() => ({
                     },
                 }
             },
-            frameworks: {
-                title: "Frameworks",
+            solutions: {
+                title: "Lösungen",
                 titlePrefix: "Ich verwende folgendes für meine Projekte"
             },
             languages: {
@@ -117,8 +117,8 @@ export default defineI18nConfig(() => ({
                     },
                 }
             },
-            frameworks: {
-                title: "Frameworks",
+            solutions: {
+                title: "Solutions",
                 titlePrefix: "I use the following for my projects"
             },
             languages: {
