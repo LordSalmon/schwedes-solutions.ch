@@ -4487,13 +4487,6 @@ nuxi@^3.10.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
-nuxt-directus@^5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/nuxt-directus/-/nuxt-directus-5.6.0.tgz#08a87c78706bcbf90e9a5246b2ec8ad67526cf7e"
-  integrity sha512-PHiekefNWpF8qHoWZOMClSckLKcSKo3oRPWgPXdQjkaF0xPkNkH+5ehvFYU3FhNQbVvqalQrAla78J5svFcgPw==
-  dependencies:
-    "@nuxt/kit" "^3.0.0"
-
 nuxt-headlessui@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/nuxt-headlessui/-/nuxt-headlessui-1.1.5.tgz#433d17772f9090b399c54ae8d3e1e149500ab0e6"

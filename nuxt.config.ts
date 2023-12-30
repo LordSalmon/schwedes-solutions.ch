@@ -4,7 +4,6 @@ export default defineNuxtConfig({
     modules: [
         "@nuxtjs/tailwindcss",
         "nuxt-icon",
-        "nuxt-directus",
         "@nuxtjs/i18n",
         "@vueuse/nuxt",
         ["nuxt-headlessui", {
