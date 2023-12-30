@@ -47,11 +47,13 @@ onBeforeUnmount(() => {
                     <h2 class="text-xl md:text-2xl mt-12 md:mt-4 md:w-[50vw]">{{ t('landing.subtitle') }}</h2>
                 </div>
             </div>
-            <canvas 
+            <ClientOnly>
+                <canvas 
                 class="absolute top-0 left-0 w-full h-full z-10"
                 id="spline-background"
                 ref="splineBackground"
-            />
+                />
+            </ClientOnly>
             <div class="w-full absolute bottom-0 flex flex-col gap-y-6 justify-end items-center h-40 z-30">
                 <NuxtLink to="#projects">
                     <span>Scroll down</span>
