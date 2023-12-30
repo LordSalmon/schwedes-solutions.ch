@@ -313,6 +313,20 @@ export interface paths {
          */
         get: operations["readSingleItemsReportsTranslations"];
     };
+    "/items/processes": {
+        /**
+         * List Items
+         * @description List the processes items.
+         */
+        get: operations["readItemsProcesses"];
+    };
+    "/items/processes/{id}": {
+        /**
+         * Retrieve an Item
+         * @description Retrieve a single processes item by unique identifier.
+         */
+        get: operations["readSingleItemsProcesses"];
+    };
     "/items/statistics": {
         /**
          * List Items
@@ -382,6 +396,20 @@ export interface paths {
          * @description Retrieve a single alerts_translations item by unique identifier.
          */
         get: operations["readSingleItemsAlertsTranslations"];
+    };
+    "/items/processes_translations": {
+        /**
+         * List Items
+         * @description List the processes_translations items.
+         */
+        get: operations["readItemsProcessesTranslations"];
+    };
+    "/items/processes_translations/{id}": {
+        /**
+         * Retrieve an Item
+         * @description Retrieve a single processes_translations item by unique identifier.
+         */
+        get: operations["readSingleItemsProcessesTranslations"];
     };
     "/items/alerts": {
         /**
@@ -728,6 +756,22 @@ export interface components {
             languages_code?: string | null;
             content?: string | null;
         };
+        ItemsProcesses: {
+            /** Format: uuid */
+            id?: string;
+            status?: string;
+            sort?: number | null;
+            /** Format: uuid */
+            user_created?: string | null;
+            /** Format: timestamp */
+            date_created?: string | null;
+            /** Format: uuid */
+            user_updated?: string | null;
+            /** Format: timestamp */
+            date_updated?: string | null;
+            image?: string | components["schemas"]["Files"] | null;
+            translations?: ((number | components["schemas"]["ItemsProcessesTranslations"])[]) | null;
+        };
         ItemsStatistics: {
             /** Format: uuid */
             id?: string;
@@ -790,6 +834,13 @@ export interface components {
             id?: number;
             /** Format: uuid */
             alerts_id?: string | null;
+            languages_code?: string | null;
+            title?: string | null;
+            content?: string | null;
+        };
+        ItemsProcessesTranslations: {
+            id?: number;
+            processes_id?: string | components["schemas"]["ItemsProcesses"] | null;
             languages_code?: string | null;
             title?: string | null;
             content?: string | null;
@@ -2121,6 +2172,64 @@ export interface operations {
     };
     /**
      * List Items
+     * @description List the processes items.
+     */
+    readItemsProcesses: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                limit?: components["parameters"]["Limit"];
+                meta?: components["parameters"]["Meta"];
+                offset?: components["parameters"]["Offset"];
+                sort?: components["parameters"]["Sort"];
+                filter?: components["parameters"]["Filter"];
+                search?: components["parameters"]["Search"];
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsProcesses"][];
+                        meta?: components["schemas"]["x-metadata"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+        };
+    };
+    /**
+     * Retrieve an Item
+     * @description Retrieve a single processes item by unique identifier.
+     */
+    readSingleItemsProcesses: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                meta?: components["parameters"]["Meta"];
+                version?: components["parameters"]["Version"];
+            };
+            path: {
+                /** @description Index of the item. */
+                id: number | string;
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsProcesses"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+            404: components["responses"]["NotFoundError"];
+        };
+    };
+    /**
+     * List Items
      * @description List the statistics items.
      */
     readItemsStatistics: {
@@ -2402,6 +2511,64 @@ export interface operations {
                 content: {
                     "application/json": {
                         data?: components["schemas"]["ItemsAlertsTranslations"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+            404: components["responses"]["NotFoundError"];
+        };
+    };
+    /**
+     * List Items
+     * @description List the processes_translations items.
+     */
+    readItemsProcessesTranslations: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                limit?: components["parameters"]["Limit"];
+                meta?: components["parameters"]["Meta"];
+                offset?: components["parameters"]["Offset"];
+                sort?: components["parameters"]["Sort"];
+                filter?: components["parameters"]["Filter"];
+                search?: components["parameters"]["Search"];
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsProcessesTranslations"][];
+                        meta?: components["schemas"]["x-metadata"];
+                    };
+                };
+            };
+            401: components["responses"]["UnauthorizedError"];
+        };
+    };
+    /**
+     * Retrieve an Item
+     * @description Retrieve a single processes_translations item by unique identifier.
+     */
+    readSingleItemsProcessesTranslations: {
+        parameters: {
+            query?: {
+                fields?: components["parameters"]["Fields"];
+                meta?: components["parameters"]["Meta"];
+                version?: components["parameters"]["Version"];
+            };
+            path: {
+                /** @description Index of the item. */
+                id: number | string;
+            };
+        };
+        responses: {
+            /** @description Successful request */
+            200: {
+                content: {
+                    "application/json": {
+                        data?: components["schemas"]["ItemsProcessesTranslations"];
                     };
                 };
             };

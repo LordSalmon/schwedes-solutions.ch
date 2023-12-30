@@ -79,6 +79,10 @@ export default defineI18nConfig(() => ({
                 title: "Danke für deine Nachricht!",
                 subtitle: "Ich werde mich so schnell wie möglich bei dir melden."
             },
+            process: {
+                title: "Ablauf",
+                titlePrefix: "So werden wir zusammenarbeiten",
+            }
         },
         en: {
             contact: {
@@ -155,6 +159,10 @@ export default defineI18nConfig(() => ({
                 title: "Thanks for your message!",
                 subtitle: "I will get back to you as soon as possible."
             },
+            process: {
+                title: "Process",
+                titlePrefix: "This is how we will work",
+            }
         }
     }
 }))

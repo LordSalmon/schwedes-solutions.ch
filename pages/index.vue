@@ -18,6 +18,7 @@ useSeoMeta({
         <SectionsProjects />
         <SectionsSolutions />
         <SectionsStatistics />
+        <SectionsProcess />
         <SectionsContact />
     </div>
 </template>

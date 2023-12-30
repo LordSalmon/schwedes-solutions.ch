@@ -45,9 +45,12 @@ const imageStyles = computed(() => {
         @mouseenter="isMouseOver = true"
         @mouseleave="isMouseOver = false"
     >
-        <img loading="lazy" class="w-6 h-6" :src="useAssetUrl(solution.icon?.id ?? '', {
-            quality: 25
-        })" />
+        <img 
+            loading="lazy" 
+            class="h-6" 
+            :src="useAssetUrl(solution.icon?.id ?? '', {quality: 10})"
+            :alt="solution.title + ' icon'"
+        />
         <span class="text-xl font-medium whitespace-nowrap">{{ solution.title }}</span>
     </NuxtLink>
 </template>

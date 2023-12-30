@@ -64,7 +64,9 @@ const languages: Language[] = [
                 <Menu as="div" class="relative inline-block text-left z-40 bg-background">
                     <div>
                         <MenuButton
-                            class="w-8 h-8 rounded border-[0.5px] border-fontColorPassive flex items-center justify-center outline-none group transition-all duration-150">
+                            class="w-8 h-8 rounded border-[0.5px] border-fontColorPassive flex items-center justify-center outline-none group transition-all duration-150"
+                            name="language button"
+                        >
                             <Icon name="material-symbols:language" class="transition-all duration-150 group-hover:text-lg" />
                         </MenuButton>
                     </div>
