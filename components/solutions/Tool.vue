@@ -40,12 +40,12 @@ const imageStyles = computed(() => {
     <NuxtLink
         :to="solution.url ?? ''"
         target="_blank"
-        class="py-2 px-4 rounded-full flex items-center gap-x-4 border-2 transition-all duration-50 outline-none"
+        class="py-2 px-4 rounded-full flex items-center gap-x-4 border-2 transition-all duration-50 outline-none w-max"
         :style="styles"
         @mouseenter="isMouseOver = true"
         @mouseleave="isMouseOver = false"
     >
-        <div class="w-6 h-6 bg-no-repeat" :style="imageStyles" />
+        <img loading="lazy" class="w-6 h-6" :src="useAssetUrl(solution.icon?.id ?? '')" />
         <span class="text-xl font-medium whitespace-nowrap">{{ solution.title }}</span>
     </NuxtLink>
 </template>
