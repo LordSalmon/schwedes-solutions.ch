@@ -21,7 +21,12 @@ const statisticsCards: {number: number, title: string}[] = [
 </script>
 
 <template>
-    <GraphicalFullSection id="statistics" :titlePrefix="t('statistics.titlePrefix')" :title="t('statistics.title')">
+    <GraphicalFullSection
+        id="statistics" 
+        dataId="statistics"
+        :titlePrefix="t('statistics.titlePrefix')" 
+        :title="t('statistics.title')"
+    >
         <div class="flex justify-around items-center gap-x-6 h-[calc(100%_-_7rem)]">
             <StatisticsCard 
                 v-for="card in statisticsCards"

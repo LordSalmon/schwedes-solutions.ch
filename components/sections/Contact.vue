@@ -63,7 +63,7 @@ const redirectUrl = computed(() => {
                     name="_redirect"
                     :value="redirectUrl"
                 />
-                <div class="flex items-center justify-between gap-x-6">
+                <div class="flex items-center justify-between gap-6 flex-col md:flex-row">
                     <input 
                         required
                         name="firstName"

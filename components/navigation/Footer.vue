@@ -9,10 +9,10 @@ const locale = useI18n();
         <div class="border-t-[0.25px] border-t-gray-500 py-4 w-full flex justify-evenly items-start">
             <span>footer brer</span>
         </div>
-        <div class="border-t-[0.25px] border-t-gray-500 h-16 w-full flex items-center justify-center">
-            <span class="font-light">{{ locale.t("footer.text", {
+        <div class="border-t-[0.25px] border-t-gray-500 h-20 md:h-16 w-full px-8 flex items-center justify-center">
+            <p class="font-light text-center">{{ locale.t("footer.text", {
                 year: new Date().getFullYear()
-            }) }}</span>
+            }) }}</p>
         </div>
     </div>
 </template>

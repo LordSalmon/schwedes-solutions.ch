@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 
 type Props = {
+    id?: string;
     title: string;
     titlePrefix: string;
 }
@@ -15,6 +16,8 @@ defineProps<Props>();
             <div class="h-[1px] w-20 bg-backgroundInverse" />
             <span class="text-sm font-light">{{ $props.titlePrefix }}</span>
         </div>
-        <h2 class="text-5xl font-light">{{ $props.title }}</h2>
+        <component :is="$props.id ? 'a' : 'div'" :href="`#${$props.id}` ?? null">
+            <h2 class="text-5xl font-light">{{ $props.title }}</h2>
+        </component>
     </div>
 </template>
