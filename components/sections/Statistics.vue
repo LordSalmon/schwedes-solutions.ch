@@ -3,20 +3,22 @@
 const { t } = useI18n();
 const statistics = (await useStatisticsData()).data.value?.data;
 
-const statisticsCards: {number: number, title: string}[] = [
-    {
-        number: statistics?.customers ?? 10,
-        title: t('statistics.customers')
-    },
-    {
-        number: statistics?.years_experience ?? 8,
-        title: t('statistics.yearsOfExperience')
-    },
-    {
-        number: statistics?.realized_projects ?? 20,
-        title: t('statistics.projects')
-    }
-];
+const statisticsCards = computed<{number: number, title: string}[]>(() => {
+    return [
+        {
+            number: statistics?.customers ?? 10,
+            title: t('statistics.customers')
+        },
+        {
+            number: statistics?.years_experience ?? 8,
+            title: t('statistics.yearsOfExperience')
+        },
+        {
+            number: statistics?.realized_projects ?? 20,
+            title: t('statistics.projects')
+        }
+    ] 
+});
 
 </script>
 
@@ -27,8 +29,8 @@ const statisticsCards: {number: number, title: string}[] = [
         :titlePrefix="t('statistics.titlePrefix')" 
         :title="t('statistics.title')"
     >
-        <div class="flex flex-col md:flex-row justify-around items-center gap-6 h-[calc(100%_-_7rem)]">
-            <StatisticsCard 
+        <div class="flex flex-col justify-around items-center gap-6 h-[calc(100%_-_7rem)] rounded-xl p-6 bg-neutral-500">
+            <StatisticsCard
                 v-for="card in statisticsCards"
                 :key="card.title"
                 :number="card.number"
