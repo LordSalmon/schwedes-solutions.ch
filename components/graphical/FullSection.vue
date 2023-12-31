@@ -15,7 +15,7 @@ withDefaults(defineProps<Props>(), {
 
 <template>
     <div class="w-full p-12 overflow-auto" :class="{
-        'min-h-screen': $props.full
+        'min-h-svh md:min-h-screen': $props.full
     }">
         <GraphicalSectionTitle 
             :id="$props.dataId"
