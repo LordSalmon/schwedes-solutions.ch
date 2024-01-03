@@ -40,7 +40,7 @@ const imageStyles = computed(() => {
     <NuxtLink
         :to="solution.url ?? ''"
         target="_blank"
-        class="py-2 px-4 rounded-full flex items-center gap-x-4 border-2 transition-all duration-50 outline-none w-max"
+        class="py-1 px-2 md:py-2 md:px-4 rounded-full flex items-center gap-x-2 md:gap-x-4 border-2 transition-all duration-50 outline-none w-max"
         :style="styles"
         @mouseenter="isMouseOver = true"
         @mouseleave="isMouseOver = false"
@@ -51,6 +51,6 @@ const imageStyles = computed(() => {
             :src="useAssetUrl(solution.icon?.id ?? '', {quality: 10})"
             :alt="solution.title + ' icon'"
         />
-        <span class="text-xl font-medium whitespace-nowrap">{{ solution.title }}</span>
+        <span class="md:text-xl font-medium whitespace-nowrap">{{ solution.title }}</span>
     </NuxtLink>
 </template>

@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
                 </NuxtLink>
                 <div class="w-[0.5px] h-16 md:h-24 bg-fontColor" />
             </div>
-            <div class="w-full absolute bottom-0 flex items-center justify-between px-8 md:px-16 h-20 md:h-28 z-30">
+            <div class="w-full absolute bottom-0 flex items-center justify-between px-4 md:px-16 h-20 md:h-28 z-30">
                 <NuxtLink 
                     :to="contactData.data.value?.data.location_url ?? ''"
                     target="_blank"
@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
                         />
                         <span class="hidden md:block">{{ t('landing.location') }}</span>
                         <span class="block md:hidden">{{ t('landing.mobileLocation') }}</span>
-                        <span class="text-3xl">🇨🇭</span>
+                        <span class="ml-1 text-xl md:text-3xl">🇨🇭</span>
                     </div>
                 </NuxtLink>
                 <div class="text-2xl flex items-center justify-end gap-x-4">
