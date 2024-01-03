@@ -57,11 +57,11 @@ const languages: Language[] = [
         </div>
         <div class="flex justify-end items-center">
             <div v-for="navButton of navbar.links" :key="navButton.name">
-                <NuxtLink :to="navButton.href" class="px-4 py-2 transition-colors duration-100 hover:text-gray-200 font-light">
+                <NuxtLink :to="navButton.href" class="px-2 md:px-4 py-2 transition-colors duration-100 hover:text-gray-200 font-light">
                     {{ navButton.name }}
                 </NuxtLink>
             </div>
-            <div class="ml-4">
+            <div class="ml-2 md:ml-4">
                 <Menu as="div" class="relative inline-block text-left z-40 bg-background">
                     <div>
                         <MenuButton
