@@ -82,6 +82,22 @@ export default defineI18nConfig(() => ({
             process: {
                 title: "Ablauf",
                 titlePrefix: "So werden wir zusammenarbeiten",
+            },
+            imprint: {
+                title: "Impressum",
+                titlePrefix: "Informationen über diese Webseite",
+                responsibleTitle: "Verantwortlich für den Inhalt",
+                email: "E-Mail:",
+                phone: "Telefon:",
+            },
+            privacy: {
+                title: "Datenschutzerklärung",
+                titlePrefix: "Informationen über die",
+            },
+            error: {
+                title: "Fehler",
+                titlePrefix: "Es ist ein Fehler aufgetreten",
+                backToHome: "Zurück zur Startseite",
             }
         },
         en: {
@@ -162,6 +178,22 @@ export default defineI18nConfig(() => ({
             process: {
                 title: "Process",
                 titlePrefix: "This is how we will work",
+            },
+            imprint: {
+                title: "Imprint",
+                titlePrefix: "Information about this website",
+                responsibleTitle: "Responsible for the content",
+                email: "E-Mail:",
+                phone: "Phone:",
+            },
+            privacy: {
+                title: "Privacy",
+                titlePrefix: "Information about the",
+            },
+            error: {
+                title: "Error",
+                titlePrefix: "An error occurred",
+                backToHome: "Back to home",
             }
         }
     }
