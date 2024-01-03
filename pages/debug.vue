@@ -1,11 +1,10 @@
 <script lang="ts" setup>
 
-const runtimeConfig = useRuntimeConfig();
+throw new Error('This is a test error');
 
 </script>
 
 <template>
     <pre>
-        {{ runtimeConfig }}
     </pre>
 </template>

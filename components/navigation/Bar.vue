@@ -51,7 +51,7 @@ const languages: Language[] = [
     <div class="h-28 w-full flex justify-between items-center px-6 md:px-12 gap-x-4">
         <div>
             <NuxtLink to="/" v-if="$route.path !== '/'">
-                <span class="text-2xl font-light">Simon Schwedes</span>
+                <span class="text-2xl font-light">Schwedes Solutions</span>
             </NuxtLink>
         </div>
         <div class="flex justify-end items-center">
