@@ -31,13 +31,22 @@ export default defineI18nConfig(() => ({
                 sections: {
                     data: {
                         title: "Daten",
-                        buttons: {
+                        links: {
                             imprint: "Impressum",
                             privacy: "Datenschutz"
                         }
                     },
                     projects: {
                         title: "Projekte",
+                    },
+                    general: {
+                        title: "Allgemein",
+                        links: {
+                            home: "Startseite",
+                            peripheral: "Peripherie",
+                            projects: "Projekte",
+                            blog: "Blog",
+                        }
                     },
                 }
             },
@@ -127,13 +136,22 @@ export default defineI18nConfig(() => ({
                 sections: {
                     data: {
                         title: "Data",
-                        buttons: {
+                        links: {
                             imprint: "Imprint",
                             privacy: "Privacy"
                         }
                     },
                     projects: {
                         title: "Projects",
+                    },
+                    general: {
+                        title: "General",
+                        links: {
+                            home: "Home",
+                            peripheral: "Peripheral",
+                            projects: "Projects",
+                            blog: "Blog",
+                        }
                     },
                 }
             },

@@ -10,8 +10,8 @@ defineProps<Props>();
 </script>
 
 <template>
-    <div class="flex items-center justify-start w-full">
-        <div class="aspect-square w-40 flex justify-center items-center">
+    <div class="flex items-center justify-start w-full gap-x-4">
+        <div class="aspect-square w-20 md:w-40 flex justify-center items-center">
             <span class="text-3xl font-semibold">{{ $props.number }}+</span>
         </div>
         <div>
