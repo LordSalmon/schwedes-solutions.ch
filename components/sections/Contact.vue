@@ -32,10 +32,7 @@ const options = ref<SelectOption[]>([
 ]);
 
 const redirectUrl = computed(() => {
-    if (process.client) {
-        return `${window.location.origin}/thanks`;
-    }
-    return "";
+    return "/thanks";
 });
 
 </script>

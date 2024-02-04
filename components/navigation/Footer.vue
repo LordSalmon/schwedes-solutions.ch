@@ -50,7 +50,7 @@ const simpleFooter = computed<SimpleFooter>(() => ({
         },
         {
             name: t("footer.sections.general.links.projects"),
-            href: "/projects"
+            href: "#projects"
         },
         {
             name: t("footer.sections.general.links.blog"),
