@@ -47,10 +47,10 @@ const imageStyles = computed(() => {
     >
         <img 
             loading="lazy" 
-            class="h-6" 
+            class="h-4 md:h-6" 
             :src="useAssetUrl(solution.icon?.id ?? '', {quality: 10})"
             :alt="solution.title + ' icon'"
         />
-        <span class="md:text-xl font-medium whitespace-nowrap">{{ solution.title }}</span>
+        <span class="text-sm md:text-xl font-medium whitespace-nowrap">{{ solution.title }}</span>
     </NuxtLink>
 </template>
