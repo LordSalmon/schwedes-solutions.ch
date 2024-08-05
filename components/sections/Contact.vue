@@ -69,6 +69,12 @@ const redirectUrl = computed(() => {
                         class="w-full bg-background rounded border-[0.5px] border-fontColor outline-none p-3 px-5" 
                         :placeholder="t('contact.lastName')"
                     >
+                    <input
+                        hidden
+                        type="text"
+                        name="_sticky"
+                        class="w-0 h-0 hidden"
+                    />
                 </div>
                 <div class="flex items-center justify-between">
                     <input 
